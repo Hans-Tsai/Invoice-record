@@ -1,0 +1,21 @@
+Bob's Store
+Tel :0123456789
+GST Reg.:0123456789
+
+Date:13.06.2020  Time:20:11:09
+Receipt ID:122769   
++----------------------------------------------+
+8888196173423 Pokka Green Tea Jasmine 1.5L
+1 x 2.20                                    2.20
+9556404001156 Pepsi 1.5L
+1 x 2.20                                    2.20
+5000277001156 Dewars White Label 750ml
+1 x 49.00                                  49.00
+
+VISA          SubTotal:                    53.40
+ITEMS(3)  QTY(3)
+------------------------
+Total :            53.40
+------------------------
+INCLUSIVE 7% GST 3.49
+--- Thank You & Have A Nice Day ---

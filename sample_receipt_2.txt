@@ -1,0 +1,20 @@
+Bob's Store
+Tel :0123456789
+GST Reg.:0123456789
+
+Date:14.04.2020  Time:19:51:46
+Receipt ID:92737   
++----------------------------------------------+
+88823027 Viceroy Menthol Super
+3 x 11.70                                  35.10
+7622210410474 Cadbury Dairy Milk 165g
+2 x 3.80                                    7.60
+
+CASH          SubTotal:                    42.70
+TENDER 50.00   CHANGE 7.30
+ITEMS(2)  QTY(5)
+------------------------
+Total :            42.70
+------------------------
+INCLUSIVE 7% GST 2.79
+--- Thank You & Have A Nice Day ---

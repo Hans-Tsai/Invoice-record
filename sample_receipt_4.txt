@@ -1,0 +1,23 @@
+Bob's Store
+Tel :0123456789
+GST Reg.:0123456789
+
+Date:30.04.2020  Time:11:46:40
+Receipt ID:100792   
++----------------------------------------------+
+8887347100219 Sunflower Dried Red Dates 60g
+1 x 1.20                                    1.20
+8887347100165 Sunflower Black Beans 250g
+1 x 2.90                                    2.90
+8888140031045 Mili Fried Dace Fish 184g
+2 x 2.40                                    4.80
+8885008269060 El-Dina Halal Luncheon Original 340g
+1 x 3.50                                    3.50
+
+CASH          SubTotal:                    12.40
+ITEMS(4)  QTY(5)
+------------------------
+Total :            12.40
+------------------------
+INCLUSIVE 7% GST 0.81
+--- Thank You & Have A Nice Day ---

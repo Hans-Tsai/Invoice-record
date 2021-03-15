@@ -1,0 +1,19 @@
+Bob's Store
+Tel :0123456789
+GST Reg.:0123456789
+
+Date:05.04.2020  Time:08:48:04
+Receipt ID:87450   
++----------------------------------------------+
+88823027 Viceroy Menthol Super
+4 x 11.70                                  46.80
+7622210400291 Daily Milk Roast Almond
+1 x 3.80                                    3.80
+
+CASH          SubTotal:                    50.60
+ITEMS(2)  QTY(5)
+------------------------
+Total :            50.60
+------------------------
+INCLUSIVE 7% GST 3.31
+--- Thank You & Have A Nice Day ---
