@@ -4,6 +4,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
+const routes = require('./routes/api')
+
+const mongoose = require('mongoose')
+const Invoice = require('./models/invoiceModel')
+
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
@@ -16,6 +22,14 @@ initializePassport(
   email => users.find(user => user.email === email),
   id => users.find(user => user.id === id)
 )
+
+// 連接到資料庫
+mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log(`Database connected successfully`))
+  .catch(err => console.log(err));
+
+// 因為mongodb的Promise已經deprecated了，所以我們這邊會用Node的Promise來代替
+mongoose.Promise = global.Promise;
 
 const users = []
 
@@ -31,6 +45,16 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
+app.use(express.json())
+app.use('/api', routes)
+
+// 新增cors,以讓在development or testing階段時,不同domain也能存取這個server的API
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/', checkAuthenticated, (req, res) => {
   res.render('index.ejs', { name: req.user.name })
 })
@@ -44,8 +68,6 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   failureRedirect: '/login',
   failureFlash: true
 }))
-
-
 
 app.get('/register', checkNotAuthenticated, (req, res) => {
   res.render('register.ejs')
@@ -89,4 +111,4 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 
-app.listen(3000)
+app.listen(port)
