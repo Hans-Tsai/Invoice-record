@@ -45,6 +45,8 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   failureFlash: true
 }))
 
+
+
 app.get('/register', checkNotAuthenticated, (req, res) => {
   res.render('register.ejs')
 })
@@ -72,6 +74,7 @@ app.delete('/logout', (req, res) => {
 
 
 function checkAuthenticated(req, res, next) {
+  // 使用passport套件所提供的req.isAuthenticated() function
   if (req.isAuthenticated()) {
     return next()
   }
