@@ -69,6 +69,42 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   failureFlash: true
 }))
 
+app.get('/invoice', (req, res, next) => {
+  Invoice.find({}, 'invoice_type')
+    .then(data => res.json(data))
+    .catch(next)
+})
+
+app.post('/invoice', checkAuthenticated, (req, res, next) => {
+  if(req.body.add_invoice) {
+    Invoice.create({ 'invoice_type': req.body.add_invoice})
+    .then(data => res.json(data))
+    .catch(next)
+  } else {
+    res.json({
+      error: "The input field should not be empty!"
+    })
+  }
+})
+
+// app.patch('/invoice/:id', (req, res, next) => {
+//   Invoice.findByIdAndUpdate( { _id:req.params.update_invoice_id }, { $invoice_type: req.params.update_invoice }, { useFindAndModify: false })
+//     .then(data => {
+//       if(!data) {
+//         res.status(404).send({
+//           message: `Cannot update Invoice with id = ${id}. Maybe Invoice was not found!`})
+//       } else {
+//         res.send({ message: `Invoice which id = ${id} was updated successfully.`})
+//       }
+//     })
+// })
+
+app.delete('/invoice/:id', (req, res, next) => {
+  Invoice.findOneAndDelete({ "_id": req.params.del_invoice })
+    .then(data => res.json(data))
+    .catch(next)
+})
+
 app.get('/register', checkNotAuthenticated, (req, res) => {
   res.render('register.ejs')
 })

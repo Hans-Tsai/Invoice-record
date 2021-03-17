@@ -1,4 +1,34 @@
-<h1>Hi <%= name %></h1>
+<h1>Welcome <%= name %></h1>
+<form action="/invoice" method="GET">
+  <button type="submit">Get all Invoice tag</button>
+</form>
+
+<form action="/invoice" method="POST">
+  <div>
+    <label for="add_invoice">Add Invoice tag</label>
+    <input type="add_invoice" id="add_invoice" name="add_invoice" required>
+  </div>
+  <button type="submit">Submit Invoice tag</button>
+</form>
+
+<!-- <form action="/invoice" method="PATCH">
+  <div>
+    <label for="update_invoice_id">Update Invoice tag id</label>
+    <input type="update_invoice_id" id="update_invoice_id" name="update_invoice_id" required>
+    <label for="update_invoice">Update Invoice tag</label>
+    <input type="update_invoice" id="update_invoice" name="update_invoice" required>
+  </div>
+  <button type="submit">Update Invoice tag</button>
+</form> -->
+
+<form action="/invoice/:id" method="DELETE">
+  <div>
+    <label for="del_invoice">Delete Invoice tag</label>
+    <input type="del_invoice" id="del_invoice" name="del_invoice" required>
+  </div>
+  <button type="submit">Delete Invoice tag</button>
+</form>
+
 <form action="/logout?_method=DELETE" method="POST">
   <button type="submit">Log Out</button>
 </form>
