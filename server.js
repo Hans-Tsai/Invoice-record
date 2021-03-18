@@ -99,11 +99,11 @@ app.post('/invoice', checkAuthenticated, (req, res, next) => {
 //     })
 // })
 
-app.delete('/invoice/:id', (req, res, next) => {
-  Invoice.findOneAndDelete({ "_id": req.params.del_invoice })
-    .then(data => res.json(data))
-    .catch(next)
-})
+// app.delete('/invoice/:id', (req, res, next) => {
+//   Invoice.findOneAndDelete({ "_id": req.params.del_invoice })
+//     .then(data => res.json(data))
+//     .catch(next)
+// })
 
 app.get('/register', checkNotAuthenticated, (req, res) => {
   res.render('register.ejs')
@@ -147,4 +147,4 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 
-app.listen(port)
+app.listen(port, () => console.log(`The web application is running on http://localhost:${port}`))
